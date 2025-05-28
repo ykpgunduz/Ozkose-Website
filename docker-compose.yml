@@ -1,0 +1,19 @@
+services:
+  app:
+    container_name: ozkose-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ozkose
+    ports:
+      - "9000:80"
+    volumes:
+      - .:/var/www
+    networks:
+      - ozkose-network
+    environment:
+      - LC_ALL=tr_TR.UTF-8
+      - LANG=tr_TR.UTF-8
+
+networks:
+  ozkose-network:

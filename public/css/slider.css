@@ -1,0 +1,202 @@
+.video-slider {
+    background: #111111;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.custom-bannerVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.custom-bannerVideo video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.custom-bannerVideo video.active {
+    opacity: 1;
+}
+
+.custom-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+.custom-content {
+    background-color: #0000008b;
+    height: 900px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Dikey hizalama eklendi */
+    justify-content: center; /* Merkezi hizalama eklendi */
+    align-items: center;
+}
+
+.custom-container .custom-bannerText {
+    position: relative;
+    max-width: 700px;
+}
+
+.custom-container .custom-bannerText div {
+    display: none;
+    transition: 0.5s ease-in-out;
+}
+
+.custom-container .custom-bannerText div h2 {
+    color: #ffffff;
+    font-size: 6em;
+    line-height: 1em;
+    font-weight: 700;
+}
+
+.custom-container .custom-bannerText div p {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.custom-container .custom-bannerText div.active {
+    display: block;
+}
+
+.custom-container .custom-controls {
+    position: absolute;
+    bottom: 25%;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.custom-container .custom-controls li {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff99;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.custom-container .custom-controls li:hover {
+    background: #f5f5f5;
+}
+
+header span.custom-menuIcon {
+    display: none;
+}
+
+@media (max-width:500px) {
+    .custom-content {
+        background-color: transparent;
+        background-image: url(../images/bg-image/row-bgimage-6.jpg);
+    }
+    .custom-container .custom-bannerText div h2 {
+        color: rgb(24, 35, 51)
+    }
+    .custom-container .custom-bannerText div p {
+        color: rgb(24, 35, 51)
+    }
+    .custom-bannerVideo video {
+        display: none;
+    }
+}
+
+@media (max-width:991px) {
+    .custom-container header {
+        padding: 10px 20px;
+    }
+    .custom-container header ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #ffffff;
+        z-index: 1000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .custom-container header.active ul {
+        display: flex;
+    }
+    .custom-container header ul li {
+        text-align: center;
+        margin: 10px;
+    }
+    .custom-container header ul li a {
+        color: #333;
+        font-size: 1.5em;
+    }
+    .custom-container header ul li a:hover {
+        color: #f00;
+    }
+    .custom-container .custom-bannerText {
+        max-width: 100%;
+        text-align: center;
+    }
+    .custom-container .custom-bannerText div h2 {
+        font-size: 3em;
+    }
+    .custom-container .custom-bannerText div p {
+        font-size: 16px;
+        margin: 20px 20px;
+    }
+    .custom-container header span.custom-menuIcon {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        display: initial;
+        z-index: 10000;
+        background: #ffffff url(../img/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+    .custom-container header span.custom-menuIcon.active {
+        background: #ffffff url(../img/close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .custom-container .custom-controls li {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+video::-webkit-media-controls,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+}
+
+.malatyaspor {
+    margin-top: 10px;
+    height: 330px;
+    width: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
